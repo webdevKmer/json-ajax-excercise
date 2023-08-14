@@ -15,20 +15,21 @@ const loadData = async (link) => {
         let newPetHTML = `
         <article class="pet">
         <h1 class="pet-name">${pet.name}</h1>
-        <small class="pet-specie">${pet.species}</small>
+        <small class="pet-specie"><em>${pet.species}</em></small>
         <h2>Foods</h2>
-        <ul class="food-likes">Likes
-        ${pet.foods.likes.map((item) => {
-            return `<li>${item}</li>`
-        }).join('')}
-        </ul>
-        <ul class="food-dislikes">Dislikes
-        ${pet.foods.dislikes.map((item) => {
-            return `<li>${item}</li>`
-        }).join('')}
-        </ul>
+        <div class="food">
+            <ul class="food-likes"><em>Likes</em>
+            ${pet.foods.likes.map((item) => {
+                return `<li>${item}</li>`
+            }).join('')}
+            </ul>
+            <ul class="food-dislikes"><em>Dislikes</em>
+            ${pet.foods.dislikes.map((item) => {
+                return `<li>${item}</li>`
+            }).join('')}
+            </ul>
+        </div>
         </article>
-        <hr>
     `
     petList.innerHTML += newPetHTML
     });
